@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+    <style>
+        body{
+            font-family: 'Microsoft Yahei';
+            background-color: #99cccc;
+        }
+        td{
+            text-align: center;
+            display: table-cell;
+        }
+        .table{
+            width: auto;
+        }
+        .table1{
+            margin-top: 70px;
+            position: fixed;
+        }
+        .table2{
+            margin-top: 90px;
+        }
+        .table3{
+
+            position: fixed;
+            top: 50px;
+            background-color: #337ab7;
+        }
+        .navbar-brand img {
+            margin-top: -15px;
+        }
+
+        .navbar-inverse {
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+        .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: #3399ff;
+}
+        .dropdown-menu{
+            background-color: #3399ff;
+        }
+        .navbar-inverse .navbar-nav>li>a {
+    color: #000000;
+        }
+
+        .navbar-collapse{
+            font-size: 16px;
+        }
+        .container{
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        .tubiao{
+            width: 180px;
+            height: 180px;
+            background-color: gold;
+
+
+        }
+        .tubiao2{
+            width: 180px;
+            height: 180px;
+            background-color: gold;
+        }
+
+        .td_2,.td_3,.td_5,.td_9,.td_10,.td_11{
+           display: none;
+        }
+
+        @media (min-width: 992px) {
+            .td-1{
+                display: block;
+            }
+            .tubiao{
+                position: fixed;
+                right: 100px;
+                top: 100px;
+            }
+            .tubiao2{
+                position: fixed;
+                right: 100px;
+                top: 400px;
+            }
+            .td_2,.td_3,.td_5,.td_9,.td_10,.td_11{
+                display: table-cell;
+            }
+            .table2{
+            margin-top: 70px;
+        }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <!--icon-bar小屏幕时的杠-->
+<div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img alt="Brand" src="../static/images/logo_school.png" height="50px"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="my-collapse-1">
+        <ul class="nav navbar-nav">
+            <li><a href="">首页</a></li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">查找条件<!--三角符号<span class="caret"></span>--></a>
+                <ul class="dropdown-menu">
+                    <li><a href="">全部</a></li>
+                    <li><a href="">按学期</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于</a>
+                <ul class="dropdown-menu">
+                    <li><a href="">说明</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</nav>
+</div>
+<div class="container table3" style="width: 100%">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ info }}</span>
+</div>
+<div class="container td-1" style="display: none">
+<div class="table-responsive">
+<table class="table table-condensed table-hover table-striped table1" id="Datagrid1">
+	<tr class="datelisthead">
+		<td width="77px" class="td_1">学年</td><td width="38px" class="td_2">学期</td><td width="66px" class="td_3">课程代码</td><td width="238px" class="td_4">课程名称</td><td width="80px" class="td_5">课程性质</td><td width="38px" class="td_6">学分</td><td width="38px" class="td_7">绩点</td><td width="38px" class="td_8">成绩</td><td width="66px" class="td_9">补考成绩</td><td width="66px" class="td_10">重修成绩</td><td width="142px" class="td_11">学院名称</td>
+	</tr>
+</table>
+</div>
+</div>
+
+<div class="container">
+<div class="table-responsive">
+<table class="table table-condensed table-hover table-striped table2" id="Datagrid1">
+
+
+
+
+    {% for row in content %}
+        <tr>
+        {% for i in row %}
+		<td class="td_{{ forloop.counter }}">{{ i }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+    </div>
+
+<div class="tubiao pull-left"></div>
+<div class="tubiao2 pull-right"></div>
+</div>
+
+
+<script>
+    a = $('.table2 tr');
+    a.each(function (index) {
+        if (index>0)
+        {
+           b = $(this).children().eq(7).html();
+            console.log(b);
+            if(60>b)
+            {
+                $(this).addClass('danger')
+            }
+            else if(b>=60&&b<70)
+            {
+                $(this).addClass('warning')
+            }
+            else if(b>=70&&b<80)
+            {
+                $(this).addClass('active')
+            }
+            else if(b>=80&&b<90)
+            {
+                $(this).addClass('success')
+            }
+            else if (b>=90)
+            {
+                $(this).addClass('info')
+            }
+        }
+
+
+    })
+
+</script>
+</body>
+</html>

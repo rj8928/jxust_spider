@@ -1,0 +1,23 @@
+.con{
+
+
+
+    text-align: center;
+}
+.form{
+    margin: 20px auto;
+    width: 330px;
+    height: 200px;
+    background-color: gold;
+}
+li{
+    margin-top: 5px;
+}
+ul{
+    height: 120px;
+    width: 100%;
+}
+
+.sub{
+    margin: 0 auto;
+}

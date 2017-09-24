@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+    <script type="javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/jxust.css">
+    <script type="javascript">
+        $(function () {
+
+        })
+    </script>
+</head>
+<body>
+<div class="con">
+<form class="form" method="post" action="/loginhandle/">
+    {% csrf_token %}
+    <ul>
+        <li class="fl">
+       <label>一卡通号</label>
+    <input type="text" class="input1" name="userid">
+        </li>
+        <li class="fl">
+     <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+    <input type="password" class='input2' name = 'pwd'>
+        </li>
+        <li class="fl">
+            <label>验证码&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" class="code" name="code" style="width: 50px"/>
+            <img src="/static/code/{{ imagename }}.gif">
+        </li>
+    </ul>
+ <input type="submit" name="sub" class="sub" value="提交">
+
+</form>
+</div>
+</body>
+</html>
